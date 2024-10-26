@@ -1,5 +1,7 @@
 # Docker Network:
 
+![Alt text](docker-network.drawio.svg)
+
 1. host
 2. bridge --> default
 3. overlay --> between multiple docker hosts
@@ -109,7 +111,7 @@ df -hT ==> displays free disk available for filesystem
 
 network interface , docker host
 
-Host Network: in this, containers share host network provided by AWS ISP if conatiners run on aws instance. containers dont use docker provided default bridge network.
+Host Network: in this, containers share host network provided by AWS ISP. containers dont use docker provided default bridge network.
 
 containers will not get individual IP address if they connect to host network. docker host IP address is the containers address
 coantainers are sharing host IP address 
