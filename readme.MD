@@ -92,8 +92,6 @@ df -hT ==> displays free disk available for filesystem
 # 2. Host Network
 
 
-**Host Network:**
-
 * **Direct Access:** containers using host networking have direct access to the host's network interface, meaning they share `host's IP
 address.`
 
