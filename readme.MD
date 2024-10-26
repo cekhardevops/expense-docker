@@ -101,9 +101,6 @@ address.`
 
 ***Host networking is useful for performance-sensitive applications that require direct access to the host’s network, such as monitoring applications or services needing low-latency communication with the host.***
 
-mysql opens 3306 port on host where conatiner running 
-similarly, backend and frontend open ports 8080 and 80 respectively on host
-
 **Choosing Between Host and Bridge Networks**
 
 * Bridge is generally preferable for multi-container applications needing isolation.
