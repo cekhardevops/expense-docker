@@ -19,24 +19,6 @@
 
 **Bridge Network suitable for containers that need to communicate with each other within containers cluster/subnet or require isolated network form host network.**
 
-**Host Network:**
-
-* **Direct Access:** containers using host networking have direct access to the host's network interface, meaning they share `host's IP
-address.`
-
-* **No port mapping:** since containers and host sharing same network interface, there's no need for port mapping, making container services directly accessble through the host's IP address and designed port.
-
-* **Performance:** Host networking can improve the performance by reducing overhead of NAT (Network Address Translation)
-
-***Host networking is useful for performance-sensitive applications that require direct access to the host’s network, such as monitoring applications or services needing low-latency communication with the host.***
-
-**Choosing Between Host and Bridge Networks**
-
-* Bridge is generally preferable for multi-container applications needing isolation.
-
-* Host is suitable when you want the container to behave as if it’s running directly on the host network for performance or simplicity.
-
-
 # bridge network usecase
 
 ***expesene project has 3 containers frontend, backend, mysql. containers cannot communicate each other in default bridge network.***
@@ -109,13 +91,27 @@ df -hT ==> displays free disk available for filesystem
 
 # 2. Host Network
 
-network interface , docker host
 
-Host Network: in this, containers share host network provided by AWS ISP. containers dont use docker provided default bridge network.
+**Host Network:**
 
-containers will not get individual IP address if they connect to host network. docker host IP address is the containers address
-coantainers are sharing host IP address 
-conatienrs open host port to run and communicate
+* **Direct Access:** containers using host networking have direct access to the host's network interface, meaning they share `host's IP
+address.`
+
+* **No port mapping:** since containers and host sharing same network interface, there's no need for port mapping, making container services directly accessble through the host's IP address and designed port.
+
+* **Performance:** Host networking can improve the performance by reducing overhead of NAT (Network Address Translation)
+
+***Host networking is useful for performance-sensitive applications that require direct access to the host’s network, such as monitoring applications or services needing low-latency communication with the host.***
 
 mysql opens 3306 port on host where conatiner running 
 similarly, backend and frontend open ports 8080 and 80 respectively on host
+
+**Choosing Between Host and Bridge Networks**
+
+* Bridge is generally preferable for multi-container applications needing isolation.
+
+* Host is suitable when you want the container to behave as if it’s running directly on the host network for performance or simplicity.
+
+
+
+
